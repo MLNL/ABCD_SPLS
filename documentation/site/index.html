@@ -1,0 +1,538 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="ie=edge" http-equiv="x-ua-compatible"/>
+<meta content="Copy to clipboard" name="lang:clipboard.copy"/>
+<meta content="Copied to clipboard" name="lang:clipboard.copied"/>
+<meta content="en" name="lang:search.language"/>
+<meta content="True" name="lang:search.pipeline.stopwords"/>
+<meta content="True" name="lang:search.pipeline.trimmer"/>
+<meta content="No matching documents" name="lang:search.result.none"/>
+<meta content="1 matching document" name="lang:search.result.one"/>
+<meta content="# matching documents" name="lang:search.result.other"/>
+<meta content="[\s\-]+" name="lang:search.tokenizer"/>
+<link href="assets/images/favicon.png" rel="shortcut icon"/>
+<meta content="mkdocs-1.0.4, mkdocs-material-4.6.3" name="generator"/>
+<title>PLS/CCA Toolkit</title>
+<link href="assets/stylesheets/application.adb8469c.css" rel="stylesheet"/>
+<link href="assets/stylesheets/application-palette.a8b3c06d.css" rel="stylesheet"/>
+<meta content="#009688" name="theme-color"/>
+<script src="assets/javascripts/modernizr.86422ebf.js"></script>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
+<style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+<link href="assets/fonts/material-icons.css" rel="stylesheet"/>
+</head>
+<body data-md-color-accent="teal" data-md-color-primary="teal" dir="ltr">
+<svg class="md-svg">
+<defs>
+<svg height="448" id="__github" viewbox="0 0 416 448" width="416" xmlns="http://www.w3.org/2000/svg"><path d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z" fill="currentColor"></path></svg>
+</defs>
+</svg>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+<a class="md-skip" href="#plscca-toolkit" tabindex="0">
+        Skip to content
+      </a>
+<header class="md-header" data-md-component="header">
+<nav class="md-header-nav md-grid">
+<div class="md-flex">
+<div class="md-flex__cell md-flex__cell--shrink">
+<a aria-label="PLS/CCA Toolkit" class="md-header-nav__button md-logo" href="." title="PLS/CCA Toolkit">
+<i class="md-icon"></i>
+</a>
+</div>
+<div class="md-flex__cell md-flex__cell--shrink">
+<label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+</div>
+<div class="md-flex__cell md-flex__cell--stretch">
+<div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+<span class="md-header-nav__topic">
+              PLS/CCA Toolkit
+            </span>
+<span class="md-header-nav__topic">
+              
+                Home
+              
+            </span>
+</div>
+</div>
+<div class="md-flex__cell md-flex__cell--shrink">
+<label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="query" data-md-state="active" name="query" placeholder="Search" spellcheck="false" type="text"/>
+<label class="md-icon md-search__icon" for="__search"></label>
+<button class="md-icon md-search__icon" data-md-component="reset" tabindex="-1" type="reset">
+        
+      </button>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="result">
+<div class="md-search-result__meta">
+            Type to start searching
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-flex__cell md-flex__cell--shrink">
+<div class="md-header-nav__source">
+<a class="md-source" data-md-source="github" href="https://github.com/anaston/PLS_CCA_framework/" title="Go to repository">
+<div class="md-source__icon">
+<svg height="24" viewbox="0 0 24 24" width="24">
+<use height="24" width="24" xlink:href="#__github"></use>
+</svg>
+</div>
+<div class="md-source__repository">
+    PLS_CCA_framework
+  </div>
+</a>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container">
+<main class="md-main" role="main">
+<div class="md-main__inner md-grid" data-md-component="container">
+<div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title md-nav__title--site" for="__drawer">
+<a class="md-nav__button md-logo" href="." title="PLS/CCA Toolkit">
+<i class="md-icon"></i>
+</a>
+    PLS/CCA Toolkit
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-source="github" href="https://github.com/anaston/PLS_CCA_framework/" title="Go to repository">
+<div class="md-source__icon">
+<svg height="24" viewbox="0 0 24 24" width="24">
+<use height="24" width="24" xlink:href="#__github"></use>
+</svg>
+</div>
+<div class="md-source__repository">
+    PLS_CCA_framework
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-toggle md-nav__toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+        Home
+      </label>
+<a class="md-nav__link md-nav__link--active" href="." title="Home">
+      Home
+    </a>
+<nav class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">Table of contents</label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#applications">
+    Applications
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introduction-to-ccapls-models">
+    Introduction to CCA/PLS models
+  </a>
+<nav class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#canonical-correlation-analysis-cca">
+    Canonical Correlation Analysis (CCA)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#partial-least-squares-pls">
+    Partial Least Squares (PLS)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sparse-pls-spls">
+    Sparse PLS (SPLS)
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introduction-to-iterative-solution-of-ccapls-models">
+    Introduction to iterative solution of CCA/PLS models
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#contributors">
+    Contributors
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="installation/" title="Installation">
+      Installation
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="getting_started/" title="Getting Started">
+      Getting Started
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="example/" title="Example">
+      Example
+    </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" id="nav-5" type="checkbox"/>
+<label class="md-nav__link" for="nav-5">
+      Analyses
+    </label>
+<nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+<label class="md-nav__title" for="nav-5">
+        Analyses
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="mfiles/template_analysis_spls/" title="Sparse PLS">
+      Sparse PLS
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="mfiles/template_analysis_rcca/" title="Regularized CCA">
+      Regularized CCA
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="mfiles/template_analysis_rerun/" title="Rerun Analysis">
+      Rerun Analysis
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" id="nav-6" type="checkbox"/>
+<label class="md-nav__link" for="nav-6">
+      Plotting
+    </label>
+<nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+<label class="md-nav__title" for="nav-6">
+        Plotting
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="mfiles/template_plot_vbm/" title="VBM">
+      VBM
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="mfiles/template_plot_roi/" title="ROI">
+      ROI
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="mfiles/template_plot_conn/" title="Connectivity">
+      Connectivity
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" id="nav-7" type="checkbox"/>
+<label class="md-nav__link" for="nav-7">
+      Defaults
+    </label>
+<nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+<label class="md-nav__title" for="nav-7">
+        Defaults
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="mfiles/cfg_defaults/" title="Cfg Defaults">
+      Cfg Defaults
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="mfiles/res_defaults/" title="Res Defaults">
+      Res Defaults
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" id="nav-8" type="checkbox"/>
+<label class="md-nav__link" for="nav-8">
+      Basic Plotting
+    </label>
+<nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+<label class="md-nav__title" for="nav-8">
+        Basic Plotting
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="mfiles/plot_paropt/" title="plot_paropt">
+      plot_paropt
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="mfiles/plot_proj/" title="plot_proj">
+      plot_proj
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="mfiles/plot_weight/" title="plot_weight">
+      plot_weight
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">Table of contents</label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#applications">
+    Applications
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introduction-to-ccapls-models">
+    Introduction to CCA/PLS models
+  </a>
+<nav class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#canonical-correlation-analysis-cca">
+    Canonical Correlation Analysis (CCA)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#partial-least-squares-pls">
+    Partial Least Squares (PLS)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sparse-pls-spls">
+    Sparse PLS (SPLS)
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introduction-to-iterative-solution-of-ccapls-models">
+    Introduction to iterative solution of CCA/PLS models
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#contributors">
+    Contributors
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content">
+<article class="md-content__inner md-typeset"><a class="md-content__icon pdf-download-btn" download href="../PLS-CCA-Toolkit-Documentation.pdf" title="Download"><i class="fa fas fa-download"></i><small> PDF</small></a>
+<a class="md-icon md-content__icon" href="https://github.com/anaston/PLS_CCA_framework/edit/master/docs/index.md" title="Edit this page"></a>
+<h1 id="plscca-toolkit">PLS/CCA Toolkit</h1>
+<p>This is a toolkit to incorporate standard Canonical Correlation Analysis (CCA), Partial Least Squares (PLS) and their regularized variants to investigate multivariate associations between multiple modalities of data, e.g. brain imaging and behaviour or brain imaging and genetics. The toolkit includes various options for PLS/CCA models (e.g. PLS, CCA, PCA-CCA, SPLS, RCCA), statistical inference (descriptive or predictive), optimizing hyperparameters for regularized PLS/CCA as well as others (e.g. different deflation strategies).</p>
+<p>Important features of the toolkit:</p>
+<ul>
+<li>testing the generalizablity of the associative effects using mutiple holdouts</li>
+<li>testing the stability of models during regularization hyperparameter selection</li>
+<li>iterative calculation of associative effects, i.e. optimal regularization for each associative effect</li>
+</ul>
+<p>For a discussion of the importance on pipeline choices, see <a href="https://doi.org/10.1016/j.bpsc.2020.02.002">Mihalik et al. 2020a</a>.</p>
+<h2 id="applications">Applications</h2>
+<p>Monteiro, J.M., Rao, A., Shawe-Taylor, J. &amp; Mourao-Miranda, J. (2016) <a href="https://doi.org/10.1016/j.jneumeth.2016.06.011">A multiple hold-out framework for Sparse Partial Least Squares.</a> J. Neurosci. Methods 271, 182-194.</p>
+<p>Mihalik, A., Ferreira, F.S., Rosa, M.J. et al. (2019) <a href="https://doi.org/10.1038/s41598-019-47277-3">Brain-behaviour modes of covariation in healthy and clinically depressed young people.</a> Sci. Rep. 9, 11536.</p>
+<p>Mihalik, A., Ferreira, F.S, Moutoussis, M. et al. (2020) <a href="https://doi.org/10.1016/j.biopsych.2019.12.001">Multiple Holdouts With Stability: Improving the Generalizability of Machine Learning Analyses of Brain-Behavior Relationships</a> Biol. Psychiatry 87, 368-376.</p>
+<div class="admonition note">
+<p class="admonition-title">Warning</p>
+<p>Please note that this toolkit is still under active development. Use wisely!</p>
+</div>
+<h2 id="introduction-to-ccapls-models">Introduction to CCA/PLS models</h2>
+<p>Notations:</p>
+<ul>
+<li><span><span class="MathJax_Preview">\mathbf{X}</span><script type="math/tex">\mathbf{X}</script></span> and <span><span class="MathJax_Preview">\mathbf{Y}</span><script type="math/tex">\mathbf{Y}</script></span> are matrices for data modalities containing one (standardized) variable/feature per column and one example/sample per row</li>
+<li><span><span class="MathJax_Preview">||\mathbf{w}||_2</span><script type="math/tex">||\mathbf{w}||_2</script></span> is the L2-norm of a vector <span><span class="MathJax_Preview">\mathbf{w}</span><script type="math/tex">\mathbf{w}</script></span></li>
+<li><span><span class="MathJax_Preview">||\mathbf{w}||_1</span><script type="math/tex">||\mathbf{w}||_1</script></span> is the L1-norm of a vector <span><span class="MathJax_Preview">\mathbf{w}</span><script type="math/tex">\mathbf{w}</script></span></li>
+</ul>
+<h3 id="canonical-correlation-analysis-cca">Canonical Correlation Analysis (CCA)</h3>
+<p>CCA finds a pair of weights, <span><span class="MathJax_Preview">\mathbf{u}</span><script type="math/tex">\mathbf{u}</script></span> and <span><span class="MathJax_Preview">\mathbf{v}</span><script type="math/tex">\mathbf{v}</script></span>, such that the correlation between the projections of <span><span class="MathJax_Preview">\mathbf{X}</span><script type="math/tex">\mathbf{X}</script></span> and <span><span class="MathJax_Preview">\mathbf{Y}</span><script type="math/tex">\mathbf{Y}</script></span> onto these weights are maximised:
+$$
+max_{\mathbf{u},\mathbf{v}}\mathbf{u^TX^TYv}\
+\text{subject to } ||\mathbf{Xu}||_2^2 = 1,\
+||\mathbf{Yv}||_2^2 = 1
+$$</p>
+<h3 id="partial-least-squares-pls">Partial Least Squares (PLS)</h3>
+<p>PLS finds a pair of weights, <span><span class="MathJax_Preview">\mathbf{u}</span><script type="math/tex">\mathbf{u}</script></span> and <span><span class="MathJax_Preview">\mathbf{v}</span><script type="math/tex">\mathbf{v}</script></span>, such that the covariance between the projections of <span><span class="MathJax_Preview">\mathbf{X}</span><script type="math/tex">\mathbf{X}</script></span> and <span><span class="MathJax_Preview">\mathbf{Y}</span><script type="math/tex">\mathbf{Y}</script></span> onto these weights are maximised:
+$$
+max_{\mathbf{u},\mathbf{v}}\mathbf{u^TX^TYv}\
+\text{subject to } ||\mathbf{u}||_2^2 = 1,\
+||\mathbf{v}||_2^2 = 1
+$$</p>
+<h3 id="sparse-pls-spls">Sparse PLS (SPLS)</h3>
+<p>PLS finds a pair of weights, <span><span class="MathJax_Preview">\mathbf{u}</span><script type="math/tex">\mathbf{u}</script></span> and <span><span class="MathJax_Preview">\mathbf{v}</span><script type="math/tex">\mathbf{v}</script></span>, such that the covariance between the projections of <span><span class="MathJax_Preview">\mathbf{X}</span><script type="math/tex">\mathbf{X}</script></span> and <span><span class="MathJax_Preview">\mathbf{Y}</span><script type="math/tex">\mathbf{Y}</script></span> onto these weights are maximised, whilst enforcing sparse weights (i.e. selecting a subset of variables):
+$$
+max_{\mathbf{u},\mathbf{v}}\mathbf{u^TX^TYv}\
+\text{subject to } ||\mathbf{u}||_2^2 = 1,\
+||\mathbf{u}||_1 \le c_u,\
+||\mathbf{v}||_2^2 = 1,\
+||\mathbf{v}||_1 \le c_v\
+$$</p>
+<div class="admonition note">
+<p class="admonition-title">To Do</p>
+<p>Add some basic information on regularized CCA (RCCA).</p>
+</div>
+<h2 id="introduction-to-iterative-solution-of-ccapls-models">Introduction to iterative solution of CCA/PLS models</h2>
+<p>Although there are standard methods to estimate all multivariate associative effects or weights for CCA/PLS at once, it is desired to have an iterative solution for three main reasons:</p>
+<ul>
+<li>to choose weights of the most representative data split,</li>
+<li>to apply constraints between the associative effects in a flexible way (e.g. desirable orthogonality properties),</li>
+<li>to optimize the regularization hyperparameters for each associative effect independently.</li>
+</ul>
+<p>In such iterative solution, one pair of weights is estimated at a time and then removed from the data (by a process known as <strong>deflation</strong>). Then the same process is repeated to find consecutive pairs of weights.</p>
+<p>CCA/PLS models and their regularized variants can be divided in two main groups based on their modelling aim. CCA/PLS can be used either for identifying associations between two modalities of data (symmetric variants) or to predict one modality from the other ones (asymmetric variants). Depending on the deflation strategy there are different types of <strong>symmetric</strong> (<strong>CCA</strong>, <strong>RCCA</strong>, <strong>PLS Mode A</strong>, <strong>PLS-SVD</strong>) and <strong>asymmetric</strong> (<strong>PLS1/PLS2</strong>, where PLS1 refers to the variant with a single output variable and PLS2 refers to the variant with multiple output variables) <strong>variants</strong>.</p>
+<p>CCA, RCCA and PLS-SVD can be seen as subcases of the generalized eigenvalue problem, therefore they inherit their deflations from the deflation of the generalized eigenvalue problem (called generalized deflation).</p>
+<p>The <strong>generalized eigenvalue problem</strong> is defined as:
+$$
+\mathbf{Aw}=\lambda\mathbf{Bw}
+$$ 
+with <span><span class="MathJax_Preview">\mathbf{A}</span><script type="math/tex">\mathbf{A}</script></span>, <span><span class="MathJax_Preview">\mathbf{B}</span><script type="math/tex">\mathbf{B}</script></span> symmetric matrices, <span><span class="MathJax_Preview">\mathbf{B}</span><script type="math/tex">\mathbf{B}</script></span> positive definite. <span><span class="MathJax_Preview">\mathbf{A}</span><script type="math/tex">\mathbf{A}</script></span> contains the variance matrices (e.g. <span><span class="MathJax_Preview">\mathbf{C_{xx}}</span><script type="math/tex">\mathbf{C_{xx}}</script></span> and <span><span class="MathJax_Preview">\mathbf{C_{yy}}</span><script type="math/tex">\mathbf{C_{yy}}</script></span>) on the diagonal and is zero elsewhere, <span><span class="MathJax_Preview">\mathbf{B}</span><script type="math/tex">\mathbf{B}</script></span> contains the covariance matrices (e.g. <span><span class="MathJax_Preview">\mathbf{C_{xy}}</span><script type="math/tex">\mathbf{C_{xy}}</script></span> and <span><span class="MathJax_Preview">\mathbf{C_{yx}}</span><script type="math/tex">\mathbf{C_{yx}}</script></span>) on the off-diagonal and is zero elswhere, <span><span class="MathJax_Preview">\mathbf{w}</span><script type="math/tex">\mathbf{w}</script></span> contains the weights for both data modalities (i.e., <span><span class="MathJax_Preview">\mathbf{w_x}</span><script type="math/tex">\mathbf{w_x}</script></span> and <span><span class="MathJax_Preview">\mathbf{w_y}</span><script type="math/tex">\mathbf{w_y}</script></span>) as a column vector per associative effect.</p>
+<p>The <strong>generalized deflation</strong> on the variance/covariance matrices is as follows:
+$$
+\mathbf{A}\leftarrow\mathbf{A}-\lambda\mathbf{B}\mathbf{w}\
+\mathbf{w^T}\mathbf{B}
+$$</p>
+<p>Notably, deflation of <span><span class="MathJax_Preview">\mathbf{B}</span><script type="math/tex">\mathbf{B}</script></span> is not needed.</p>
+<p>The generalized deflation can be written in the input data space as:
+$$
+\mathbf{X}\leftarrow\mathbf{X}-\mathbf{X}\mathbf{w_x}\
+\mathbf{w_x^T}\mathbf{B_{xx}}
+$$
+$$
+\mathbf{Y}\leftarrow\mathbf{Y}-\mathbf{Y}\mathbf{w_y}\
+\mathbf{w_y^T}\mathbf{B_{yy}}
+$$
+and we refer to this method of deflation as <strong>projection deflation</strong>.</p>
+<p>In case of CCA (<code>cca-projection</code>), <span><span class="MathJax_Preview">\mathbf{B_{xx}}</span><script type="math/tex">\mathbf{B_{xx}}</script></span> and 
+<span><span class="MathJax_Preview">\mathbf{B_{yy}}</span><script type="math/tex">\mathbf{B_{yy}}</script></span> are defined as:
+$$
+\mathbf{B_{xx}} = \mathbf{C_{xx}}
+$$
+$$
+\mathbf{B_{yy}} = \mathbf{C_{yy}}
+$$
+where <span><span class="MathJax_Preview">\mathbf{C_{xx}}</span><script type="math/tex">\mathbf{C_{xx}}</script></span> and <span><span class="MathJax_Preview">\mathbf{C_{yy}}</span><script type="math/tex">\mathbf{C_{yy}}</script></span> are the covariance
+matrices of <span><span class="MathJax_Preview">\mathbf{X}</span><script type="math/tex">\mathbf{X}</script></span> and <span><span class="MathJax_Preview">\mathbf{Y}</span><script type="math/tex">\mathbf{Y}</script></span>, respectively.</p>
+<p>In case of RCCA (<code>cca-projection</code>), <span><span class="MathJax_Preview">\mathbf{B_{xx}}</span><script type="math/tex">\mathbf{B_{xx}}</script></span> and <span><span class="MathJax_Preview">\mathbf{B_{yy}}</span><script type="math/tex">\mathbf{B_{yy}}</script></span> are defined as:
+$$
+\mathbf{B_{xx}} = (1-\tau_{x})\mathbf{C_{xx}}+\tau_{x}\mathbf{I}
+$$
+$$
+\mathbf{B_{yy}} = (1-\tau_{y})\mathbf{C_{yy}}+\tau_{y}\mathbf{I}
+$$
+where <span><span class="MathJax_Preview">\tau_{x}</span><script type="math/tex">\tau_{x}</script></span> and <span><span class="MathJax_Preview">\tau_{y}</span><script type="math/tex">\tau_{y}</script></span> are the L2 regularization hyperparameters.</p>
+<p>In case of PLS-SVD (<code>pls-projection</code>), <span><span class="MathJax_Preview">\mathbf{B_{xx}}</span><script type="math/tex">\mathbf{B_{xx}}</script></span> and 
+<span><span class="MathJax_Preview">\mathbf{B_{yy}}</span><script type="math/tex">\mathbf{B_{yy}}</script></span> are defined as:
+$$
+\mathbf{B_{xx}} = \mathbf{I}
+$$
+$$
+\mathbf{B_{yy}} = \mathbf{I}
+$$</p>
+<p>For further details on the generalized eigenvalue problem and the generalized deflation, see <a href="https://kernelmethods.blogs.bristol.ac.uk/">Shawe-Taylor &amp; Cristiani 2004</a>.</p>
+<p>The deflation for PLS Mode A (<code>pls-modeA</code>) is as follows:
+$$
+\mathbf{X}\leftarrow\mathbf{X}-\mathbf{X}\mathbf{w_x}\
+\mathbf{p_x^T}
+$$
+$$
+\mathbf{Y}\leftarrow\mathbf{Y}-\mathbf{Y}\mathbf{w_y}\
+\mathbf{p_y^T}
+$$
+where <span><span class="MathJax_Preview">\mathbf{p_x}=\frac{\mathbf{X^TXw_x}}{\mathbf{w_x^TX^Xw_x}}</span><script type="math/tex">\mathbf{p_x}=\frac{\mathbf{X^TXw_x}}{\mathbf{w_x^TX^Xw_x}}</script></span> and
+<span><span class="MathJax_Preview">\mathbf{p_y}=\frac{\mathbf{Y^TYw_y}}{\mathbf{w_y^TY^Yw_y}}</span><script type="math/tex">\mathbf{p_y}=\frac{\mathbf{Y^TYw_y}}{\mathbf{w_y^TY^Yw_y}}</script></span>.</p>
+<p>The deflation for PLS1/PLS2 (<code>pls-regression</code>) is the same as for PLS Mode A, but it is applied only on the predictor data, commonly denoted by <span><span class="MathJax_Preview">\mathbf{X}</span><script type="math/tex">\mathbf{X}</script></span>, in line with the asymetric nature of this PLS variant.</p>
+<p>For further details on CCA/PLS models and deflations, see the Supplemental Information of  <a href="https://doi.org/10.1016/j.biopsych.2019.12.001">Mihalik et al. 2020b</a>.</p>
+<h2 id="contributors">Contributors</h2>
+<ul>
+<li><a href="https://github.com/anaston">Agoston Mihalik</a></li>
+<li><a href="https://github.com/ferreirafabio80">Fabio Ferreira</a></li>
+<li><a href="https://github.com/NilsWinter">Nils Winter</a></li>
+</ul>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-nav">
+<nav class="md-footer-nav__inner md-grid">
+<a class="md-flex md-footer-nav__link md-footer-nav__link--next" href="installation/" rel="next" title="Installation">
+<div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+<span class="md-flex__ellipsis">
+<span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Installation
+              </span>
+</div>
+<div class="md-flex__cell md-flex__cell--shrink">
+<i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+</div>
+</a>
+</nav>
+</div>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org" rel="noopener" target="_blank">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+          Material for MkDocs</a>
+</div>
+<div class="md-footer-social">
+<link href="assets/fonts/font-awesome.css" rel="stylesheet"/>
+<a class="md-footer-social__link fa fa-twitter" href="https://twitter.com/MLNL_UCL" rel="noopener" target="_blank" title="twitter"></a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script src="assets/javascripts/application.c33a9706.js"></script>
+<script>app.initialize({version:"1.0.4",url:{base:"."}})</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>

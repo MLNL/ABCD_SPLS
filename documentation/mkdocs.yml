@@ -1,0 +1,65 @@
+# Project information
+site_name: PLS/CCA Toolkit
+repo_name: 'PLS_CCA_framework'
+repo_url: 'https://github.com/anaston/PLS_CCA_framework/'
+
+# Social media
+#plugins:
+#  social:
+#    - type: 'twitter'
+#    - link: 'https://twitter.com/MLNL_UCL'
+
+# Theme configuration
+theme: 
+  name: 'material'
+  palette:
+    primary: 'teal'
+    accent: 'teal'
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
+  icon:
+    repo: fontawesome/brands/github
+  logo: assets/brain_icon.png
+  favicon: assets/brain_icon.png
+
+# Latex
+extra_javascript:
+  - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
+
+# extensions
+markdown_extensions:
+  - pymdownx.arithmatex
+  - codehilite
+  - admonition
+
+# include images
+#- docs:
+#    - figures:
+#        - schemaball_plot.png
+
+
+# Site structure
+nav: 
+- Home: 'index.md'
+- Background: 'background.md'
+- Getting Started: 'getting_started.md'
+- Demos:
+  - Simulated data: 'mfiles/demo_simulation.md'
+  - Structural MRI data: 'mfiles/demo_smri.md'
+  - Functional MRI data: 'mfiles/demo_fmri.md'
+- Analysis: 'analysis.md'
+- Visualization: 'visualization.md'
+- Defaults:
+  - cfg: 'cfg.md' 
+  - res: 'res.md' 
+- Functions:
+  - cfg_defaults: 'mfiles/cfg_defaults.md'
+  - cleanup_files: 'mfiles/cleanup_files.md'
+  - plot_paropt: 'mfiles/plot_paropt.md'
+  - plot_proj: 'mfiles/plot_proj.md'
+  - plot_weight: 'mfiles/plot_weight.md'
+  - res_defaults: 'mfiles/res_defaults.md'
+  - set_path: 'mfiles/set_path.md'
+  - update_dir: 'mfiles/update_dir.md'
+#  - save_results: 'mfiles/save_results.md'

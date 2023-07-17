@@ -1,0 +1,464 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="ie=edge" http-equiv="x-ua-compatible"/>
+<meta content="Copy to clipboard" name="lang:clipboard.copy"/>
+<meta content="Copied to clipboard" name="lang:clipboard.copied"/>
+<meta content="en" name="lang:search.language"/>
+<meta content="True" name="lang:search.pipeline.stopwords"/>
+<meta content="True" name="lang:search.pipeline.trimmer"/>
+<meta content="No matching documents" name="lang:search.result.none"/>
+<meta content="1 matching document" name="lang:search.result.one"/>
+<meta content="# matching documents" name="lang:search.result.other"/>
+<meta content="[\s\-]+" name="lang:search.tokenizer"/>
+<link href="../assets/images/favicon.png" rel="shortcut icon"/>
+<meta content="mkdocs-1.0.4, mkdocs-material-4.6.3" name="generator"/>
+<title>Getting Started - PLS/CCA Toolkit</title>
+<link href="../assets/stylesheets/application.adb8469c.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/application-palette.a8b3c06d.css" rel="stylesheet"/>
+<meta content="#009688" name="theme-color"/>
+<script src="../assets/javascripts/modernizr.86422ebf.js"></script>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
+<style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+<link href="../assets/fonts/material-icons.css" rel="stylesheet"/>
+</head>
+<body data-md-color-accent="teal" data-md-color-primary="teal" dir="ltr">
+<svg class="md-svg">
+<defs>
+<svg height="448" id="__github" viewbox="0 0 416 448" width="416" xmlns="http://www.w3.org/2000/svg"><path d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z" fill="currentColor"></path></svg>
+</defs>
+</svg>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+<a class="md-skip" href="#setting-the-path" tabindex="0">
+        Skip to content
+      </a>
+<header class="md-header" data-md-component="header">
+<nav class="md-header-nav md-grid">
+<div class="md-flex">
+<div class="md-flex__cell md-flex__cell--shrink">
+<a aria-label="PLS/CCA Toolkit" class="md-header-nav__button md-logo" href=".." title="PLS/CCA Toolkit">
+<i class="md-icon"></i>
+</a>
+</div>
+<div class="md-flex__cell md-flex__cell--shrink">
+<label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+</div>
+<div class="md-flex__cell md-flex__cell--stretch">
+<div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+<span class="md-header-nav__topic">
+              PLS/CCA Toolkit
+            </span>
+<span class="md-header-nav__topic">
+              
+                Getting Started
+              
+            </span>
+</div>
+</div>
+<div class="md-flex__cell md-flex__cell--shrink">
+<label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="query" data-md-state="active" name="query" placeholder="Search" spellcheck="false" type="text"/>
+<label class="md-icon md-search__icon" for="__search"></label>
+<button class="md-icon md-search__icon" data-md-component="reset" tabindex="-1" type="reset">
+        
+      </button>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="result">
+<div class="md-search-result__meta">
+            Type to start searching
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-flex__cell md-flex__cell--shrink">
+<div class="md-header-nav__source">
+<a class="md-source" data-md-source="github" href="https://github.com/anaston/PLS_CCA_framework/" title="Go to repository">
+<div class="md-source__icon">
+<svg height="24" viewbox="0 0 24 24" width="24">
+<use height="24" width="24" xlink:href="#__github"></use>
+</svg>
+</div>
+<div class="md-source__repository">
+    PLS_CCA_framework
+  </div>
+</a>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container">
+<main class="md-main" role="main">
+<div class="md-main__inner md-grid" data-md-component="container">
+<div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title md-nav__title--site" for="__drawer">
+<a class="md-nav__button md-logo" href=".." title="PLS/CCA Toolkit">
+<i class="md-icon"></i>
+</a>
+    PLS/CCA Toolkit
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-source="github" href="https://github.com/anaston/PLS_CCA_framework/" title="Go to repository">
+<div class="md-source__icon">
+<svg height="24" viewbox="0 0 24 24" width="24">
+<use height="24" width="24" xlink:href="#__github"></use>
+</svg>
+</div>
+<div class="md-source__repository">
+    PLS_CCA_framework
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href=".." title="Home">
+      Home
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../installation/" title="Installation">
+      Installation
+    </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-toggle md-nav__toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+        Getting Started
+      </label>
+<a class="md-nav__link md-nav__link--active" href="./" title="Getting Started">
+      Getting Started
+    </a>
+<nav class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">Table of contents</label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#setting-the-path">
+    Setting the path
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cfg-and-res">
+    Cfg and res
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#templates">
+    Templates
+  </a>
+<nav class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#job-templates">
+    Job templates
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#analysis-templates">
+    Analysis templates
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#plotting-templates">
+    Plotting templates
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../example/" title="Example">
+      Example
+    </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" id="nav-5" type="checkbox"/>
+<label class="md-nav__link" for="nav-5">
+      Analyses
+    </label>
+<nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+<label class="md-nav__title" for="nav-5">
+        Analyses
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../mfiles/template_analysis_spls/" title="Sparse PLS">
+      Sparse PLS
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../mfiles/template_analysis_rcca/" title="Regularized CCA">
+      Regularized CCA
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../mfiles/template_analysis_rerun/" title="Rerun Analysis">
+      Rerun Analysis
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" id="nav-6" type="checkbox"/>
+<label class="md-nav__link" for="nav-6">
+      Plotting
+    </label>
+<nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+<label class="md-nav__title" for="nav-6">
+        Plotting
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../mfiles/template_plot_vbm/" title="VBM">
+      VBM
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../mfiles/template_plot_roi/" title="ROI">
+      ROI
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../mfiles/template_plot_conn/" title="Connectivity">
+      Connectivity
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" id="nav-7" type="checkbox"/>
+<label class="md-nav__link" for="nav-7">
+      Defaults
+    </label>
+<nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+<label class="md-nav__title" for="nav-7">
+        Defaults
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../mfiles/cfg_defaults/" title="Cfg Defaults">
+      Cfg Defaults
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../mfiles/res_defaults/" title="Res Defaults">
+      Res Defaults
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" id="nav-8" type="checkbox"/>
+<label class="md-nav__link" for="nav-8">
+      Basic Plotting
+    </label>
+<nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+<label class="md-nav__title" for="nav-8">
+        Basic Plotting
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../mfiles/plot_paropt/" title="plot_paropt">
+      plot_paropt
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../mfiles/plot_proj/" title="plot_proj">
+      plot_proj
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../mfiles/plot_weight/" title="plot_weight">
+      plot_weight
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">Table of contents</label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#setting-the-path">
+    Setting the path
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cfg-and-res">
+    Cfg and res
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#templates">
+    Templates
+  </a>
+<nav class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#job-templates">
+    Job templates
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#analysis-templates">
+    Analysis templates
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#plotting-templates">
+    Plotting templates
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content">
+<article class="md-content__inner md-typeset"><a class="md-content__icon pdf-download-btn" download href="../../PLS-CCA-Toolkit-Documentation.pdf" title="Download"><i class="fa fas fa-download"></i><small> PDF</small></a>
+<a class="md-icon md-content__icon" href="https://github.com/anaston/PLS_CCA_framework/edit/master/docs/getting_started.md" title="Edit this page"></a>
+<h1>Getting Started</h1>
+<p>The following section will help you get started with your first analysis and some basic plotting. First, we will explain the dependencies of the toolkit and how to set the path. Second, we will introduce the <code>cfg</code> and <code>res</code> structures that define the settings of your analysis and plots, respectively. Third, will discuss how to use <code>templates</code> that are provided to run pre-defined basic analyses and plots. Finally, we will go through an example step by step and demonstrate what you need to do to run an analysis and plot results. </p>
+<h2 id="setting-the-path">Setting the path</h2>
+<p>The toolkit relies on the following toolbox for permutation testing:</p>
+<ul>
+<li><a href="https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/PALM">PALM</a></li>
+</ul>
+<p>For Canonical Correlation Analysis (CCA) and Regularized Canonical Correlation Analysis (RCCA), the toolkit relies on the following toolbox:</p>
+<ul>
+<li><a href="https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FSLNets">FSL Nets</a></li>
+</ul>
+<p>Finally, we use some additional toolboxes for advanced functionalities or to create specific plots. These include the following:</p>
+<ul>
+<li><a href="https://www.fil.ion.ucl.ac.uk/spm/software/download/">SPM12</a></li>
+<li><a href="https://www.nitrc.org/projects/bnv/">BrainNet Viewer</a></li>
+<li><a href="https://nilearn.github.io/">Nilearn</a></li>
+<li><a href="https://www.gin.cnrs.fr/en/tools/aal/">AAL</a></li>
+<li><a href="https://github.com/aalto-ics-kepaco/cca-tutorial">cca-tutorial</a></li>
+</ul>
+<p>To know if you will need any of these toolboxes, check out the settings for the specific plot you would like to make <a href="../mfiles/res_defaults/#fields-and-options-for-plotting">here</a>.</p>
+<p>All these toolboxes are stored in a dedicated folder. To create this folder, run the following line in the MATLAB command window:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">mkdir</span> <span class="s">external</span>
+</code></pre></div>
+<p>Importantly, the <code>external</code> folder and its content is added to <code>.gitignore</code> and thus they are not version controlled by git. This is to enable flexible functionality of the toolkit, i.e. users can have different content in their external folders, and also to reduce the size of the toolkit.</p>
+<p>Now, we demonstrate how to use the toolkit with SPM12. This enables using nifti (.nii) files e.g. for reading a brain mask or an atlas to work with 3D weight images. For this, download SPM12 manually and copy the 'spm12' folder into the <code>external</code> folder, then finally add SPM12 to the MATLAB path using the following command:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">set_path</span><span class="p">(</span><span class="s">'spm12'</span><span class="p">)</span>
+</code></pre></div>
+<p>To be able to use the plotting functionality, you need to use the following command:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">set_path</span><span class="p">(</span><span class="s">'plot'</span><span class="p">)</span>
+</code></pre></div>
+<p>You can also pass multiple arguments to <code>set_path</code>. The order of the arguments is arbitrary. For instance, to add SPM12 and the plot folder at the same time, run the following command:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">set_path</span><span class="p">(</span><span class="s">'spm12'</span><span class="p">,</span> <span class="s">'plot'</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="cfg-and-res">Cfg and res</h2>
+<p>The <code>cfg</code> and <code>res</code> structures control the behaviour of your analysis and plots, respectively. Therefore it is of uttermost importance that you are familiar with their settings. They are automatically initialized or updated by <code>cfg_defaults</code> and <code>res_defaults</code> during the execution of the toolkit (see templates below).</p>
+<p>To get more information on all fields of the <code>cfg</code> and <code>res</code> structure, please see <a href="../mfiles/cfg_defaults/">cfg defaults</a> and <a href="../mfiles/res_defaults/">res defaults</a>. We advise to inspect the fields of these structures once they are initialized or updated to make sure you use the settings you intended to do.</p>
+<h2 id="templates">Templates</h2>
+<p>The easiest way of getting familiar with the toolkit is by reusing some of the template files that we have provided in the <code>templates</code> folder. There are 3 types of templates:</p>
+<ul>
+<li>templates for submitting jobs in the cluster</li>
+<li>templates for running analysis</li>
+<li>templates for plotting results</li>
+</ul>
+<p>The type of template can be recognised by its name. You should not change anything within the templates themselves but copy and paste their content to a new file, which should be placed either in the toolkit folder or one of its subfolders. In the latter case, make sure that the path is added to the MATLAB path.</p>
+<h3 id="job-templates">Job templates</h3>
+<p>These templates are highly specific to the scheduling system of the cluster you want to run your analysis or plot the results on. Check if one of our templates meet your needs, otherwise you will need to create one for yourself. </p>
+<h3 id="analysis-templates">Analysis templates</h3>
+<p>These templates work in a similar fashion. First, <code>set_path</code> is called to add the necessary paths of the toolkit to your MATLAB path. Second, the configurations of an analysis is defined in the fields of <code>cfg</code>. Third, the <code>cfg</code> is updated with the default values to ensure a valid configuration structure. Finally, the function <code>main</code> is called to initiate the analysis.</p>
+<h3 id="plotting-templates">Plotting templates</h3>
+<p>These templates work in a similar fashion. First, <code>set_path('plot')</code> is called to add the necessary paths of the toolkit to your MATLAB path including the <code>plot</code> folder. Second, <code>res</code> is set with some required fields to be able to load the results of the analysis. Before loading the results, the paths are updated in your saved <code>cfg</code> and <code>res</code> structures in case you are plotting the results on a different computer as the analyses was run on. Finally, <code>res</code> is passed to various plotting functions to create different plots of the results. Importantly, <code>res</code> controls the behaviour of the plots, so you will need to modify its fields if you want to change the default plotting options.</p>
+<p>For more information on the different templates we provide, please go to the template section in the navigation bar.</p>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-nav">
+<nav class="md-footer-nav__inner md-grid">
+<a class="md-flex md-footer-nav__link md-footer-nav__link--prev" href="../installation/" rel="prev" title="Installation">
+<div class="md-flex__cell md-flex__cell--shrink">
+<i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+</div>
+<div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+<span class="md-flex__ellipsis">
+<span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Installation
+              </span>
+</div>
+</a>
+<a class="md-flex md-footer-nav__link md-footer-nav__link--next" href="../example/" rel="next" title="Example">
+<div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+<span class="md-flex__ellipsis">
+<span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Example
+              </span>
+</div>
+<div class="md-flex__cell md-flex__cell--shrink">
+<i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+</div>
+</a>
+</nav>
+</div>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org" rel="noopener" target="_blank">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+          Material for MkDocs</a>
+</div>
+<div class="md-footer-social">
+<link href="../assets/fonts/font-awesome.css" rel="stylesheet"/>
+<a class="md-footer-social__link fa fa-twitter" href="https://twitter.com/MLNL_UCL" rel="noopener" target="_blank" title="twitter"></a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script src="../assets/javascripts/application.c33a9706.js"></script>
+<script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>

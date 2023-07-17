@@ -1,0 +1,16 @@
+scripts/
+manuscript/
+test/
+draft/
+doc/
+projects/
+external/
+*.asv
+*.m~
+*.svg
+*.fig
+misc/geninoutmat.m
+misc/test_SVD_properties.m
+runMain.o*
+plot/plot_wx_gfa.m
+documentation/.python-version
