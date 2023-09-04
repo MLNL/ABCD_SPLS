@@ -17,6 +17,6 @@ One should also read the Supplement, together with the main paper, as some infor
 
 ## Toolkit & other libraries used
 
-- We used a custom-built version of the CCA/PLS Toolkit found [here](https://github.com/MLNL/cca_pls_toolkit). If one wants to replicate our analyses one should use the custom-built version of the toolkit found here, since otherwise most scripts will fail to run.
+- We used a custom-built version of the CCA/PLS Toolkit found in this repository. If one wants to replicate our analyses one should use the custom-built version of the toolkit found here, since otherwise most scripts will fail to run.
 - We also used a list of other libraries, all of which can be found in our server link mentioned above.
 
